@@ -7,10 +7,15 @@ Created on Sat Nov  5 23:51:34 2016
 from numpy import sin,pi,linspace,sqrt,zeros
 from matplotlib import pyplot
 def sinesum(t,b):
-    S=zeros(len(t))
-    for j in range(len(t)):
+    if(t==[]):
+        S=zeros(len(t))
+        for j in range(len(t)):
+            for i in range(len(b)):
+                S[j]+=b[i]*sin((i+1)*t[j])
+    else:
+        S=0.
         for i in range(len(b)):
-            S[j]+=b[i]*sin((i+1)*t[j])
+                S+=b[i]*sin((i+1)*t)
     return S
 
 def test_sinesum():
@@ -18,9 +23,9 @@ def test_sinesum():
     b=[4,-3]
     print("Результат функции sinesum:")
     print(sinesum(t,b))
-    S=[0,0]
-    S[0]=4*sin((-pi)/2)+4*sin(2*pi/2)
-    S[1]=-3*sin((-pi)/2)-3*sin(2*pi/2)
+    S=[0.,0.]
+    S[0]=4.*sin((-pi)/2)+4*sin(2*pi/2)
+    S[1]=-3.*sin((-pi)/2)-3*sin(2*pi/2)
     print("Вручную:")
     print(S)
 
@@ -35,7 +40,7 @@ def plot_compare(f,N,M,b):
     
 def error(b,f,M):
     t=linspace(-pi,pi,M)
-    E=0
+    E=0.
     Sn=sinesum(t,b)
     for i in range(M):
         E+=(f(t[i])-Sn[i])**2
@@ -55,15 +60,15 @@ def trial(f,N):
 def f(t):
     return t/pi
 
-b1=-2
-b2=-2
-b3=-2
+b1=-2.
+b2=-2.
+b3=-2.
 B1=linspace(-1,1,20)
 B2=linspace(-1,1,20)
 B3=linspace(-1,1,20)
-err=10000
+err=10000.
 b=[0,0,0]
-err_vrem=10000
+err_vrem=10000.
 for i in range(20):
     for j in range(20):
         for k in range(20):
