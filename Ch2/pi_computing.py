@@ -11,20 +11,20 @@ import matplotlib.pyplot as plt
 
 def Leibnitc(N):
     x=zeros(N)
-    vrem2=0
+    vrem2=0.
     for i in range(N):
         vrem=(4*i+1)*(4*i+3)
-        vrem2+=8/vrem
+        vrem2+=8./vrem
         x[i]=pi-vrem2
     print("Погрешность N-ого эл-та по Лейбницу:"+str(x[N-1]))
     return x
 def Eiler(N):
     x=zeros(N)
-    vrem2=0
-    x[0]=0
+    vrem2=0.
+    x[0]=0.
     for i in range(1,N,1):
         vrem=i**2
-        vrem2+=6/vrem
+        vrem2+=6./vrem
         x[i]=pi-sqrt(vrem2)
     print("Погрешность N-ого эл-та по Эйлеру:"+str(x[N-1]))
     return x
