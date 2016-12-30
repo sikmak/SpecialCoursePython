@@ -4,7 +4,7 @@ Created on Wed Oct 19 13:30:35 2016
 
 @author: Никита
 """
-
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,3 +19,5 @@ print("Результаты счета вручную")
 print("V0 = "+str(V0))
 print("V1 = "+str(V1))
 print("V2 = "+str(V2))
+plt.show();
+os.system("pause")
