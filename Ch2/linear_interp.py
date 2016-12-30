@@ -20,8 +20,8 @@ def interpolate(Yt,Tx):
 
 
 
-answer = input("Введите какую задачу Вы хотите решить(а,b,c):\n")
-if answer =="a":
+answer = float(input("Введите какую задачу Вы хотите решить(1,2,3):\n"))
+if answer ==1.:
     Tx = float(input("Ввведите точку T:\n"))
     Yt= input("Ввведите последовательность Yt через запятую:\n")
     Yt=Yt.split(',')
@@ -30,7 +30,7 @@ if answer =="a":
         print("("+str(Tx)+","+str(Yt[int(Tx-1)])+")")
     else:
         print("("+str(Tx)+","+str(interpolate(Yt,Tx))+")")
-elif answer=="b":
+elif answer==2.:
     Yt= input("Ввведите последовательность Yt через запятую:\n")
     Yt=Yt.split(',')
     Yt=list(map(float,Yt))
@@ -43,7 +43,7 @@ elif answer=="b":
         else:
             print("("+str(Tx)+","+str(interpolate(Yt,Tx))+")")
         Tx = float(input("Ввведите время из промежутка 1-t-"+lengthY+":\n"))
-elif answer=="c":
+elif answer==3.:
     Yt=[4.4,2.0,11.0,21.5,7.5]
     Tx1=2.5
     Tx2=3.1
