@@ -9,7 +9,7 @@ def everage(N):
     print("i=1")
     print("Среднее значение равно:1")
     for i in range(2,N+1):
-        n=i/2;
+        n=i/2.;
         print("i="+ str(i))
         if isinstance( n, int ):
             print("Среднее значение равно:"+str(n-.5))
