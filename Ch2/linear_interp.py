@@ -14,7 +14,8 @@ from math import ceil
 def interpolate(Yt,Tx):
     T1=int(Tx)
     T2=ceil(Tx)
-    k=(Yt[T1-1]-Yt[T2-1])/(T1-T2)
+    T3=int(T2)
+    k=(Yt[T1-1]-Yt[T3-1])/(T1-T2)
     b=Yt[T1-1]-k*T1
     return k*Tx+b
 
