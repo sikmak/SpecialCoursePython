@@ -41,7 +41,6 @@ def squareTrapeze(x,y,leftMostInd_X,rightMostInd_X):
             h = abs(x[0]-x[i])
             S+=0.5*h*(y[i]+y[0])
             i=0
-    print(S)
     return S
 
 def polyarea(x,y):
