@@ -8,6 +8,6 @@ Created on Sun Oct 23 19:58:40 2016
 sum = 0
 i = 1
 while i < 11:
-    sum += 1 
+    sum += i 
     i+=1
 print(sum)
